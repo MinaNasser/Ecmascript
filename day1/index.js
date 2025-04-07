@@ -129,3 +129,29 @@ let Obj = {
 };
 let { name, age, address: { city, state } } = Obj; // destructuring
 console.log(name, age, city, state); // John 30 New York NY
+
+
+
+// use for  of
+let str = "hello world";
+for (let char of str) { 
+  console.log(char); // h e l l o   w o r l d
+}
+// use for  in  
+let objw = {
+  name: "John",
+  age: 30,
+  address: {
+    city: "New York",
+    state: "NY",
+  },
+    hobbies: ["reading", "traveling", "swimming"],
+};
+for (let key in objw) {
+  console.log(key, objw[key]); // name John age 30 address { city: 'New York', state: 'NY' } hobbies [ 'reading', 'traveling', 'swimming' ]
+}
+
+let arrw = [1, 2, 3, 4, 5];
+for (let index in arrw) {
+  console.log(index, arrw[index]); // 0 1 1 2 2 3 3 4 4 5
+}
