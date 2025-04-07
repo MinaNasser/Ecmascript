@@ -45,3 +45,23 @@ obj2.name = "Doe"; // changing the value of name in obj2
 console.log(obj); // { name: 'John', age: 30 }
 console.log(obj2); // { name: 'Doe', age: 30 }
 console.log(obj1); // { name: 'John', age: 30 }
+
+let person = {
+  name: "John",
+  age: 30,
+  address: {
+    city: "New York",
+    state: "NY",
+  },
+};
+
+let person1 = {...person}; // shallow copy
+let person2 = Object.assign({}, person); // shallow copy
+let person3 = {...person, address: {...person.address, state: "CA", zip:12345}}; // deep copy
+
+
+console.log(person); // { name: 'John', age: 30, address: { city: 'New York', state: 'NY' } }   
+console.log(person1); // { name: 'John', age: 30, address: { city: 'New York', state: 'NY' } }
+console.log(person2); // { name: 'John', age: 30, address: { city: 'New York', state: 'NY' } }
+console.log(person3); // { name: 'John', age: 30, address: { city: 'New York', state: 'CA', zip: 12345 } }
+
