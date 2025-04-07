@@ -65,3 +65,30 @@ console.log(person1); // { name: 'John', age: 30, address: { city: 'New York', s
 console.log(person2); // { name: 'John', age: 30, address: { city: 'New York', state: 'NY' } }
 console.log(person3); // { name: 'John', age: 30, address: { city: 'New York', state: 'CA', zip: 12345 } }
 
+// use array
+let arr = [1, 2, 3, 4, 5];
+let arr1 = [...arr]; // shallow copy
+let arr2 = arr.slice(); // shallow copy
+let arr3 = arr.map((item) => item); // shallow copy
+let arr4 = arr.filter((item) => item); // shallow copy
+let arr5 = arr.reduce((acc, item) => [...acc, item], []); // shallow copy
+let arr6 = arr.reduce((acc, item) => acc.concat(item), []); // shallow copy
+let arr7 = arr.reduce((acc, item) => [...acc, item], []); // shallow copy
+let arr8 = arr.reduce((acc, item) => acc.concat(item), []); // shallow copy
+console.log(
+    arr,
+    arr1,
+    arr2,
+    arr3,
+    arr4,
+    arr5,
+    arr6,
+    arr7,
+    arr8
+);
+console.log(arr1 === arr); // false
+console.log(arr2 === arr); // false
+console.log(arr3 === arr); // false
+console.log(arr4 === arr); // false
+
+
