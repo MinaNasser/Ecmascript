@@ -214,3 +214,53 @@ for (let [key] of mp) {
   console.log(mp.get(key));
 }
 console.log("####################");
+// use forEach
+mp.forEach((value, key) => {
+  console.log(key, value); // 10 DAS name John age 30 address { city: 'New York', state: 'NY' }
+});
+console.log("####################");
+// build in function of array
+
+let array = [1, 2, 3, 4, 5];
+console.log(array.map((item) => item * 2)); // [ 2, 4, 6, 8, 10 ]
+console.log(array.filter((item) => item % 2 === 0)); // [ 2, 4 ]
+console.log(array.reduce((acc, item) => acc + item, 0)); // 15
+// indexOf
+console.log(array.indexOf(3)); // 2
+// lastIndexOf
+console.log(array.lastIndexOf(3)); // 2
+// includes
+console.log(array.includes(3)); // true
+// find
+console.log(array.find((item) => item > 3)); // 4
+// findIndex
+console.log(array.findIndex((item) => item== 3)); // 2
+// some
+console.log(array.some((item) => item > 3)); // true
+// every
+console.log(array.every((item) => item > 3)); // false
+// fill 
+// console.log(array.fill(0)); // [ 0, 0, 0, 0, 0 ]
+// join
+console.log(array.join()); // 1,2,3,4,5
+// reverse
+console.log(array.reverse()); // [ 5, 4, 3, 2, 1 ]
+// sort
+console.log(array.sort()); // [ 1, 2, 3, 4, 5 ] 
+// splice
+console.log(array.splice(1, 2)); // [ 2, 3 ]
+// slice
+console.log(array.slice(2, 3)); // [ 5]
+// concat
+console.log(array.concat([6, 7, 8])); // [ 1, 4, 5, 6, 7, 8 ]
+// flat
+console.log(array.flat()); // [ 1, 2, 3, 4, 5 ]
+// flatMap
+console.log(array.flatMap((item) => [item * 2])); // [ 2, 4, 6, 8, 10 ] 
+
+let found = array.findIndex(function(value){
+    return value ==4; 
+
+}); // findIndex
+console.log(found); // 1
+
