@@ -148,10 +148,22 @@ let objw = {
     hobbies: ["reading", "traveling", "swimming"],
 };
 for (let key in objw) {
-  console.log(key, objw[key]); // name John age 30 address { city: 'New York', state: 'NY' } hobbies [ 'reading', 'traveling', 'swimming' ]
+  console.log(`${key}:: ${objw[key].address || objw[key]}`); // name John age 30 address { city: 'New York', state: 'NY' } hobbies [ 'reading', 'traveling', 'swimming' ]
 }
 
 let arrw = [1, 2, 3, 4, 5];
 for (let index in arrw) {
   console.log(index, arrw[index]); // 0 1 1 2 2 3 3 4 4 5
 }
+
+// use  Set and Map
+let map = new Map([
+  ["name", "John"],
+  ["age", 30],
+  ["address", { city: "New York", state: "NY" }],
+]);
+console.log(map); // Map(3) { 'name' => 'John', 'age' => 30, 'address' => { 'city' => 'New York', 'state' => 'NY' } }
+
+
+let set = new Set([1, 1,2, 3, 4, 5, 6]);
+console.log(set); // Set(6) { 1, 2, 3, 4, 5, 6 }
