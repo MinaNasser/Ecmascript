@@ -166,4 +166,31 @@ console.log(map); // Map(3) { 'name' => 'John', 'age' => 30, 'address' => { 'cit
 
 
 let set = new Set([1, 1,2, 3, 4, 5, 6]);
+set.add(0); // add 0 to set
+set.delete(1); // delete 1 from set
+set.clear(); // clear set
+set.add(1); // add 1 to set
+set.add(2); // add 2 to set
+set.add(3); // add 3 to set
+
+set.add(4); // add 4 to set
+set.add(5); // add 5 to set
+set.add(6); // add 6 to set
 console.log(set); // Set(6) { 1, 2, 3, 4, 5, 6 }
+for (let item of set) {
+  console.log(item); // 1 2 3 4 5 6
+}
+
+
+
+// use date structure tree
+
+let mp = new Map();
+mp.set(10,"DAS"); // empty map
+mp.set("name", "John");
+mp.set("age", 30);
+mp.set("address", { city: "New York", state: "NY" });
+console.log(mp); // Map(3) { 'name' => 'John', 'age' => 30, 'address' => { 'city' => 'New York', 'state' => 'NY' } }
+
+console.log(mp.get(10)); // DAS
+console.log(mp.get("name")); // John
