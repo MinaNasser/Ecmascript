@@ -19,3 +19,15 @@ console.log(a); // 20
 
 // let b = 10;
 // let b = 20; // error
+
+// hoisting
+//block scope
+// function scope
+// lexical scope
+// closure
+
+
+// using const  
+const c = 10;
+// c = 20; // error
+
