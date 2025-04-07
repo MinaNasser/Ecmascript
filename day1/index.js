@@ -92,3 +92,19 @@ console.log(arr3 === arr); // false
 console.log(arr4 === arr); // false
 
 
+
+function sum(a, b) {
+  return a + b;
+}
+console.log(sum(10, 20)); // 30
+
+function sum(a, b,...rest) { 
+    let sum = a + b;
+    // rest is an array of the remaining arguments
+    for (let i = 0; i < rest.length; i++) {
+        sum += rest[i];
+    }
+    return sum;
+}
+
+console.log(sum(10, 20, 30, 40, 50)); // 150
