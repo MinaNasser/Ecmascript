@@ -31,3 +31,17 @@ console.log(a); // 20
 const c = 10;
 // c = 20; // error
 
+console.log("c = ",c); // 10
+
+let obj = {
+  name: "John",
+  age: 30,
+};
+
+//copying object using Object.assign
+let obj1 = Object.assign({}, obj); // {name: obj.name, age:obj.age}
+let obj2 = {...obj};// spread operator =={name: obj.name, age:obj.age} }
+obj2.name = "Doe"; // changing the value of name in obj2
+console.log(obj); // { name: 'John', age: 30 }
+console.log(obj2); // { name: 'Doe', age: 30 }
+console.log(obj1); // { name: 'John', age: 30 }
