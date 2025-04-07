@@ -117,3 +117,15 @@ let [aa, bb] = arr; // destructuring
 console.log(aa, bb); // 1 2
 let [a1, a2, ...rest] = arr; // destructuring
 console.log(a1, a2, rest); // 1 2 [ 3, 4, 5 ]
+
+
+let Obj = {
+  name: "John",
+  age: 30,
+  address: {
+    city: "New York",
+    state: "NY",
+  },
+};
+let { name, age, address: { city, state } } = Obj; // destructuring
+console.log(name, age, city, state); // John 30 New York NY
