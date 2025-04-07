@@ -108,3 +108,12 @@ function sum(a, b,...rest) {
 }
 
 console.log(sum(10, 20, 30, 40, 50)); // 150
+
+
+// let aa=arr[0]; // 1
+// let bb=arr[1]; // 2
+
+let [aa, bb] = arr; // destructuring
+console.log(aa, bb); // 1 2
+let [a1, a2, ...rest] = arr; // destructuring
+console.log(a1, a2, rest); // 1 2 [ 3, 4, 5 ]
