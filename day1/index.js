@@ -183,6 +183,7 @@ for (let item of set) {
 
 
 
+
 // use date structure tree
 
 let mp = new Map();
@@ -194,3 +195,22 @@ console.log(mp); // Map(3) { 'name' => 'John', 'age' => 30, 'address' => { 'city
 
 console.log(mp.get(10)); // DAS
 console.log(mp.get("name")); // John
+
+for (let [key, value] of mp) {
+  console.log(key, value); // 10 DAS name John  
+// age 30 address { city: 'New York', state: 'NY' } 
+}
+
+for (let key of mp.keys()) {
+  console.log(key); // 10 name age address
+}
+for (let value of mp.values()) {
+  console.log(value); // DAS John 30 { city: 'New York', state: 'NY' }
+}
+for (let [key, value] of mp.entries()) {
+  console.log(key, value); // 10 DAS name John age 30 address { city: 'New York', state: 'NY' }
+}
+for (let [key] of mp) {
+  console.log(mp.get(key));
+}
+console.log("####################");
