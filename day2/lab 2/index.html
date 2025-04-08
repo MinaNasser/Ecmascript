@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User Tabs and Todos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    #tabs {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+    .tab {
+      padding: 10px 15px;
+      margin-right: 5px;
+      cursor: pointer;
+      background-color: #eee;
+      border-radius: 5px;
+    }
+    .tab.active {
+      background-color: #2196F3;
+      color: white;
+    }
+    #todos {
+      padding: 10px;
+    }
+    .todo {
+      margin-bottom: 8px;
+    }
+    .completed {
+      color: green;
+    }
+    .not-completed {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>Users & Their Todos</h1>
+  <div id="tabs"></div>
+  <div id="todos"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

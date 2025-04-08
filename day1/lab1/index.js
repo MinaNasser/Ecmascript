@@ -62,9 +62,9 @@ for (let item of countries) {
 let countryList = ["Egypt", "USA", "USA", "France", "Egypt"];
 let countriesSet = new Set(countryList);
 
-let totalCount = countryList.length;
+let totalCount = countryList.length;//5
 
-let uniqueCount = countriesSet.size;
+let uniqueCount = countriesSet.size;//3
 
 let repeatedCount = totalCount - uniqueCount;
 
