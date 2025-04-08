@@ -86,6 +86,18 @@ function getData()
 
 }
 
+let users = getData().then((data) => {
+  console.log(data);
+}).then((Posts) => {
+  return getPosts(Posts);
+})
+
+  .catch((error) => {
+  console.error(error);
+});
+
+
+
 getData().then((data) => {
   console.log(data);
 }
@@ -141,3 +153,13 @@ async function fetchData() {
     console.error(error);
   }
 }
+console.log("####################");
+let userswait ;
+fetch("https://jsonplaceholder.typicode.com/users")
+  .then((response) => response.json())
+  .then((data) =>{
+    console.log(data)
+    userswait = data;
+  } 
+)
+  .catch((error) => console.error(error));
