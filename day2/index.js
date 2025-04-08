@@ -191,6 +191,21 @@ main();
 
   console.log(sum(1,2));
 
+  let s = Symbol();
+  console.log(s);
+ let  obj2 = {
+  [s]: 123,
+  name: "ahmed",
+  age : 25,
+  address: "cairo",
+
+  }
+  console.log(obj2);
+  
+  for(let val in obj2) {
+    console.log(val);
+  }
+
   let obj = {
     name: "ahmed",
     age: 25,
@@ -199,8 +214,14 @@ main();
       setTimeout(function() {
         console.log(this,"Hello");
       }, 1000);
-      // console.log("Hello");
+  
     }
+  
+    
   }
 
   obj.sayHello();
+
+  // for(let val of obj) {
+  //   console.log(val);
+  // }
