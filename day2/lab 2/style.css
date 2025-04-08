@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+
+}
+
+#tabs {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.tab {
+    padding: 10px 15px;
+    margin-right: 5px;
+    cursor: pointer;
+    background-color: #eee;
+    border-radius: 5px;
+}
+
+.tab.active {
+    background-color: #2196F3;
+    color: white;
+}
+
+#todos {
+    padding: 10px;
+}
+
+.todo {
+    margin-bottom: 8px;
+}
+
+.todo-section {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.completed {
+    color: green;
+    font-weight: bold;
+}
+
+.not-completed {
+    color: red;
+    font-weight: bold;
+}
+
+
+select, button {
+    padding: 8px;
+    margin-right: 10px;
+  }
+  #user-details {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    max-width: 400px;
+  }

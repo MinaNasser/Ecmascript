@@ -24,7 +24,6 @@ function displayUserTabs(users) {
       const tab = document.createElement("div");
       tab.classList.add("tab");
       tab.textContent = user.username;
-      tab.dataset.userId = user.id;
   
       tab.addEventListener("click", async () => {
         document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
@@ -56,16 +55,42 @@ async function fetchAndDisplayTodos(userId) {
     const todosContainer = document.getElementById("todos");
     todosContainer.innerHTML = "";
   
-    todos.forEach(todo => {
+    let CompletedTodos = todos.filter(todo => todo.completed);
+    let NotCompletedTodos = todos.filter(todo => !todo.completed);
+  
+    let completedSection = document.createElement("div");
+    completedSection.classList.add("todo-section");
+    completedSection.innerHTML = `<h2>✅ Completed Todos</h2>`;
+  
+    CompletedTodos.forEach(todo => {
       const todoDiv = document.createElement("div");
       todoDiv.classList.add("todo");
   
-      const statusClass = todo.completed ? "completed" : "not-completed";
-      const statusText = todo.completed ? " Completed" : " Not Completed";
+      const statusClass = "completed";
+      const statusText = "Completed";
   
       todoDiv.innerHTML = `<strong>${todo.title}</strong> - <span class="${statusClass}">${statusText}</span>`;
-      todosContainer.appendChild(todoDiv);
+      completedSection.appendChild(todoDiv);
     });
+  
+    let notCompletedSection = document.createElement("div");
+    notCompletedSection.classList.add("todo-section");
+    notCompletedSection.innerHTML = `<h2>❌ Not Completed Todos</h2>`;
+  
+    NotCompletedTodos.forEach(todo => {
+      const todoDiv = document.createElement("div");
+      todoDiv.classList.add("todo");
+  
+      const statusClass = "not-completed";
+      const statusText = "Not Completed";
+  
+      todoDiv.innerHTML = `<strong>${todo.title}</strong> - <span class="${statusClass}">${statusText}</span>`;
+      notCompletedSection.appendChild(todoDiv);
+    });
+  
+    todosContainer.appendChild(completedSection);
+    todosContainer.appendChild(notCompletedSection);
   }
   
+
 // console.log(Users)
