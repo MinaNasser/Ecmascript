@@ -88,4 +88,56 @@ function getData()
 
 getData().then((data) => {
   console.log(data);
-})
+}
+).catch((error) => {
+  console.error(error);
+});
+function getPosts(userId) {
+  return new Promise((resolve, reject) => {
+    let xhr = new XMLHttpRequest();
+    xhr.open("GET", "https://jsonplaceholder.typicode.com/posts?userId=" + userId, true);
+    xhr.send();
+    xhr.onload = function () {
+      if (xhr.status === 200 && xhr.readyState === 4) {
+        resolve(JSON.parse(xhr.responseText));
+      } else {
+        reject("Error fetching data");
+      }
+    };
+  });
+}
+getPosts(1).then((data) => {
+  console.log(data);
+}).catch((error) => {
+  console.error(error);
+});
+function getComments(postId) {
+  return new Promise((resolve, reject) => {
+    let xhr = new XMLHttpRequest();
+    xhr.open("GET", "https://jsonplaceholder.typicode.com/comments?postId=" + postId, true);
+    xhr.send();
+    xhr.onload = function () {
+      if (xhr.status === 200 && xhr.readyState === 4) {
+        resolve(JSON.parse(xhr.responseText));
+      } else {
+        reject("Error fetching data");
+      }
+    };
+  });
+}
+getComments(1).then((data) => {
+  console.log(data);
+}).catch((error) => {
+  console.error(error);
+});
+
+
+// use async await
+async function fetchData() {
+  try {
+    const data = await getData();
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
