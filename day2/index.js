@@ -163,3 +163,19 @@ fetch("https://jsonplaceholder.typicode.com/users")
   } 
 )
   .catch((error) => console.error(error));
+
+
+  async function main(){
+    let res = await fetch("https://jsonplaceholder.typicode.com/users");
+    let users = await res.json();
+    let userId = users[0].id;
+    let res2 = await fetch("https://jsonplaceholder.typicode.com/posts?userId="+userId+"");
+    let posts = await res2.json();
+    console.log(posts);
+    let postId = posts[0].id;
+    let res3 = await fetch("https://jsonplaceholder.typicode.com/comments?postId="+postId+"");
+    let comments = await res3.json();
+    console.log(comments);
+
+  }
+  main();
