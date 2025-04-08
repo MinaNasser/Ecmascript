@@ -191,16 +191,24 @@ main();
 
   console.log(sum(1,2));
 
-  let s = Symbol();
+  let s = "ahmed";
+  let fun = s[Symbol.iterator]();
+  console.log(fun.next());
+  console.log(fun.next());
+  console.log(fun.next());
+  console.log(fun.next());
+  console.log(fun.next());
+  // console.log(fun.next());
   console.log(s);
- let  obj2 = {
-  [s]: 123,
-  name: "ahmed",
-  age : 25,
-  address: "cairo",
-
+  let  obj2 = {
+    [s]: 123,
+    name: "ahmed",
+    age : 25,
+    address: "cairo",
+    
   }
   console.log(obj2);
+  
   
   for(let val in obj2) {
     console.log(val);
@@ -225,3 +233,21 @@ main();
   // for(let val of obj) {
   //   console.log(val);
   // }
+
+
+  function* gen() {
+    // yield 1;
+    // yield 2;
+    // yield 3;
+    // yield 4;
+    // yield 5;
+    let i = 0;
+    while(true) {
+      yield i++;
+    }
+  }
+  let g = gen();
+  for(let i  of g) {
+    console.log(i);
+    if(i > 10) break;
+  }
